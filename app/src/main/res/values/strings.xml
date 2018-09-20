@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Story</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="publisher">发布者用户名</string>
+    <string name="send">发送</string>
+    <string name="favorite">收藏</string>
+    <string name="friends">好友</string>
+    <string name="community">动态</string>
+    <string name="home">主页</string>
+    <string name="manage">管理</string>
+    <string name="share">分享</string>
+    <string name="setting">设置</string>
+    <string name="username">kisetsu</string>
+    <string name="signature">Snow flakes in January.</string>
+</resources>
