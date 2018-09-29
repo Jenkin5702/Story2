@@ -1,5 +1,7 @@
 package com.kisetsu.story;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -18,6 +20,8 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.kisetsu.story.activities.ActivityLogin;
+import com.kisetsu.story.activities.ActivityWelcome;
 import com.kisetsu.story.fragments.FragmentCommunity;
 import com.kisetsu.story.fragments.FragmentFavorite;
 import com.kisetsu.story.fragments.FragmentFriends;
@@ -37,19 +41,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         setSupportActionBar(toolbar);
 
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+
+        SharedPreferences sp=getSharedPreferences("config",MODE_PRIVATE);
+        SharedPreferences.Editor editor=sp.edit();
+        editor.putBoolean("signed",true);
+        editor.apply();
 
         FragmentManager fragmentManager=getSupportFragmentManager();
         FragmentHome fragmentHome=new FragmentHome();
@@ -84,6 +85,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivity(new Intent(MainActivity.this, ActivityLogin.class));
+//            finish();
             return true;
         }
 

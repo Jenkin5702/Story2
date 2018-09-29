@@ -1,4 +1,4 @@
-package com.kisetsu.story.utilities;
+package com.kisetsu.story.loader;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,6 +14,7 @@ import java.net.URL;
 
 /**
  * Created by Administrator on 7/11/2017.
+ * Load image from server.
  */
 
 public class ImageLoader {
@@ -51,7 +52,6 @@ public class ImageLoader {
     }
 
     class LoadImageTask extends AsyncTask<String,Void,Bitmap> {
-
         private ImageView imageView;
         private String url;
         LoadImageTask(ImageView imageView, String url){
@@ -76,12 +76,13 @@ public class ImageLoader {
             }
         }
     }
+
     private Bitmap loadImage(String urlString){
         Bitmap bitmap=null;
         InputStream is=null;
         try {
             URL url=new URL(urlString);
-            HttpURLConnection connection= (HttpURLConnection) url.openConnection();
+            HttpURLConnection connection=(HttpURLConnection) url.openConnection();
             is=new BufferedInputStream(connection.getInputStream());
             bitmap=BitmapFactory.decodeStream(is);
             connection.disconnect();

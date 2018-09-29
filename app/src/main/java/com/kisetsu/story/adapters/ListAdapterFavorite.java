@@ -10,8 +10,7 @@ import android.widget.TextView;
 
 import com.kisetsu.story.R;
 import com.kisetsu.story.itembeans.ItemBeanFavorite;
-import com.kisetsu.story.utilities.ImageLoader;
-import com.kisetsu.story.itembeans.ItemBeanHome;
+import com.kisetsu.story.loader.ImageLoader;
 
 import java.util.List;
 

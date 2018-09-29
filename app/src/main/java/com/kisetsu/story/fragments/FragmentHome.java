@@ -26,7 +26,8 @@ import java.util.List;
 
 public class FragmentHome extends Fragment implements ListView.OnItemClickListener{
     public FloatingActionButton fab;
-    ListView listHome;
+    public ListView listHome;
+    public List<ItemBeanHome> list;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,23 +40,9 @@ public class FragmentHome extends Fragment implements ListView.OnItemClickListen
                 listHome.smoothScrollToPosition(0);
             }
         });
-        List<ItemBeanHome> list=new ArrayList<>();
-        list.add(new ItemBeanHome("123","234","3,45"));
-        list.add(new ItemBeanHome("123","234","3,45"));
-        list.add(new ItemBeanHome("123","234","3,45"));
-        list.add(new ItemBeanHome("123","234","3,45"));
-        list.add(new ItemBeanHome("123","234","3,45"));
-        list.add(new ItemBeanHome("123","234","3,45"));
-        list.add(new ItemBeanHome("123","234","3,45"));
-        list.add(new ItemBeanHome("123","234","3,45"));
-        list.add(new ItemBeanHome("123","234","3,45"));
-        list.add(new ItemBeanHome("123","234","3,45"));
-        list.add(new ItemBeanHome("123","234","3,45"));
-        list.add(new ItemBeanHome("123","234","3,45"));
-        list.add(new ItemBeanHome("123","234","3,45"));
-        list.add(new ItemBeanHome("123","234","3,45"));
-        list.add(new ItemBeanHome("123","234","3,45"));
-        list.add(new ItemBeanHome("123","234","3,45"));
+        list=new ArrayList<>();
+        getData();
+        addItem();
         ListAdapterHome listAdapterHome=new ListAdapterHome(getContext(),list);
         listHome.setAdapter(listAdapterHome);
         listHome.setOnItemClickListener(this);
@@ -64,6 +51,27 @@ public class FragmentHome extends Fragment implements ListView.OnItemClickListen
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        startActivity(new Intent(getContext(), ActivityOneStory.class));
+        Intent intent=new Intent(getContext(), ActivityOneStory.class);
+        Bundle bundle=new Bundle();
+        bundle.putCharSequence("title",list.get(position).title);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+    private void addItem(){
+        list.add(new ItemBeanHome("234","3,45"));
+        list.add(new ItemBeanHome("234","3,45"));
+        list.add(new ItemBeanHome("234","3,45"));
+        list.add(new ItemBeanHome("234","3,45"));
+        list.add(new ItemBeanHome("234","3,45"));
+        list.add(new ItemBeanHome("234","3,45"));
+        list.add(new ItemBeanHome("234","3,45"));
+        list.add(new ItemBeanHome("234","3,45"));
+        list.add(new ItemBeanHome("234","3,45"));
+        list.add(new ItemBeanHome("234","3,45"));
+        list.add(new ItemBeanHome("234","3,45"));
+        list.add(new ItemBeanHome("234","3,45"));
+    }
+    private void getData(){
+        //TODO Get data from server.
     }
 }

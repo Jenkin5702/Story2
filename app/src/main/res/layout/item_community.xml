@@ -1,22 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
     android:layout_margin="4dp">
     <LinearLayout
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <TextView
-            android:id="@+id/tv_publisher"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/publisher"/>
+            android:paddingBottom="6dp"
+            android:gravity="center_vertical">
+            <com.kisetsu.story.utilities.RoundImageView
+                android:id="@+id/iv_portrait_community"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:paddingRight="6dp"
+                android:src="@drawable/portrait"/>
+            <TextView
+                android:id="@+id/tv_publisher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/publisher"
+                android:textSize="16sp"/>
+        </LinearLayout>
         <TextView
             android:id="@+id/tv_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/app_name"/>
+            android:text="@string/community"/>
     </LinearLayout>
 </LinearLayout>

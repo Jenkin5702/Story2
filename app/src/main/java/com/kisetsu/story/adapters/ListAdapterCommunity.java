@@ -10,8 +10,7 @@ import android.widget.TextView;
 
 import com.kisetsu.story.R;
 import com.kisetsu.story.itembeans.ItemBeanCommunity;
-import com.kisetsu.story.utilities.ImageLoader;
-import com.kisetsu.story.itembeans.ItemBeanHome;
+import com.kisetsu.story.loader.ImageLoader;
 
 import java.util.List;
 
@@ -19,8 +18,7 @@ public class ListAdapterCommunity extends BaseAdapter {
     private List<ItemBeanCommunity> listItem;
     private LayoutInflater inflater;
     private ImageLoader imageLoader;
-
-    class ViewHolder{
+    private class ViewHolder{
         public TextView publisher;
         public TextView content;
         public ImageView image;
@@ -36,12 +34,10 @@ public class ListAdapterCommunity extends BaseAdapter {
     public int getCount() {
         return listItem.size();
     }
-
     @Override
     public Object getItem(int i) {
         return listItem.get(i);
     }
-
     @Override
     public long getItemId(int i) {
         return i;
@@ -49,7 +45,7 @@ public class ListAdapterCommunity extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        ViewHolder viewHolder=null;
+        ViewHolder viewHolder;
         if(view==null){
             viewHolder=new ViewHolder();
             view=inflater.inflate(R.layout.item_home,null);

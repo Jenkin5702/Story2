@@ -16,4 +16,9 @@
     <string name="setting">设置</string>
     <string name="username">kisetsu</string>
     <string name="signature">Snow flakes in January.</string>
+    <string name="welcome">欢迎使用，正在初始化</string>
+    <string name="skip">跳过</string>
+    <string name="password">密码</string>
+    <string name="signin">注册</string>
+    <string name="signup">登录</string>
 </resources>

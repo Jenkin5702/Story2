@@ -5,11 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kisetsu.story.R;
-import com.kisetsu.story.utilities.ImageLoader;
+import com.kisetsu.story.loader.ImageLoader;
 import com.kisetsu.story.itembeans.ItemBeanHome;
 
 import java.util.List;
